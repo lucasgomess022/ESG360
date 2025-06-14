@@ -1,0 +1,109 @@
+Quero que você atue como desenvolvedor fullstack e crie um sistema web completo, funcional e bem estruturado, com base nas especificações abaixo. O objetivo é um sistema de classificação ESG para propriedades rurais produtoras de pecuária de corte no Rio Grande do Sul. O sistema será usado como parte de um projeto de TCC que pode se tornar uma patente.
+
+### CONTEXTO DO SISTEMA:
+- O sistema aplica um questionário com base em 3 dimensões ESG:
+  - Ambiental (25 questões)
+  - Social (8 questões)
+  - Governança (8 questões)
+- Cada pergunta é respondida com uma pontuação de 1 a 3:
+  - 1 = Não contempla
+  - 2 = Contempla em parte
+  - 3 = Contempla amplamente
+- A pontuação de cada dimensão gera uma classificação:
+  - Reativa, Normativa ou Proativa (conforme a faixa de pontuação).
+- O sistema deve exibir um painel para o administrador visualizar e exportar os resultados.
+
+---
+
+### FUNCIONALIDADES DO SISTEMA:
+1. **Tela inicial / login do administrador**
+   - Autenticação simples com email e senha
+   - Apenas o administrador pode acessar os resultados
+
+2. **Formulário interativo ESG**
+   - O formulário deve ser dividido em três seções: Ambiental, Social e Governança
+   - Cada pergunta deve ter título e três botões (1, 2, 3) estilizados
+   - Os textos de cada pergunta devem vir de um arquivo estruturado ou do código
+   - As respostas devem ser obrigatórias
+
+3. **Cálculo automático**
+   - Após o envio do formulário:
+     - Calcular a soma total de cada dimensão
+     - Classificar automaticamente:
+       - Ambiental:
+         - 25–42: Reativa
+         - 43–59: Normativa
+         - 60–75: Proativa
+       - Social:
+         - 8–14: Reativa
+         - 15–20: Normativa
+         - 21–24: Proativa
+       - Governança:
+         - 8–14: Reativa
+         - 15–20: Normativa
+         - 21–24: Proativa
+
+4. **Banco de dados**
+   - Armazenar:
+     - Data do envio
+     - Nome ou ID da propriedade (campo no início do formulário)
+     - Respostas de cada pergunta
+     - Pontuações
+     - Classificações
+
+5. **Painel do administrador**
+   - Listagem de todas as avaliações feitas
+   - Filtro por data ou nome de propriedade
+   - Visualização completa de cada avaliação
+   - Exportação em Excel/PDF
+
+---
+
+### TECNOLOGIAS SUGERIDAS:
+- **Frontend:**
+  - ReactJS com TailwindCSS
+  - Interface limpa, moderna, inspirada em design de dashboards agrícolas e ambientais
+  - Responsiva para desktop e mobile
+
+- **Backend:**
+  - Node.js com Express
+  - Rotas para envio de formulário e login
+  - Autenticação simples com JWT ou Firebase Auth
+
+- **Banco de Dados:**
+  - PostgreSQL ou Firebase Firestore
+  - Tabelas/coleções:
+    - users (admin)
+    - properties (dados das avaliações)
+
+- **Hospedagem sugerida:**
+  - Frontend: Vercel ou Netlify
+  - Backend + banco: Render, Railway ou Firebase
+
+---
+
+### DETALHES DE INTERFACE:
+- Use cores naturais (tons de verde, marrom claro, bege) que remetam ao campo, sustentabilidade e ESG
+- Use ícones para diferenciar as dimensões ESG (ex: folha para ambiental, pessoas para social, prédio para governança)
+- Progresso visual ao responder as perguntas
+- Mensagem de sucesso após envio do formulário
+
+---
+
+### ENTREGAS ESPERADAS:
+- Código fonte completo (React frontend, Node backend)
+- Scripts SQL ou estrutura de banco pronta
+- Interface estilizada e funcional
+- Página protegida por login para visualização dos resultados
+- Cálculo automatizado das classificações ESG
+- Capacidade de exportar dados
+- Documentação básica para instalação local e hospedagem
+
+---
+
+### INSTRUÇÕES FINAIS:
+- Gere todos os arquivos organizados em pastas (frontend, backend, banco de dados)
+- Escreva os códigos completos, não apenas exemplos
+- Utilize componentes reaproveitáveis no frontend
+- Comente os principais trechos do código para facilitar a manutenção
+
